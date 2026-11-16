@@ -178,7 +178,7 @@ export const KeyboardProvider = (props: KeyboardProviderProps) => {
       onKeyboardMoveEnd: (event: NativeEvent) => {
         "worklet";
 
-        updateSharedValues(event, ["android"]);
+        updateSharedValues(event, ["android", "ios"]);
       },
     },
     [],
@@ -226,7 +226,7 @@ export const KeyboardProvider = (props: KeyboardProviderProps) => {
         onKeyboardMoveStart={OS === "ios" ? onKeyboardMove : undefined}
         onKeyboardMove={OS === "android" ? onKeyboardMove : undefined}
         onKeyboardMoveInteractive={onKeyboardMove}
-        onKeyboardMoveEnd={OS === "android" ? onKeyboardMove : undefined}
+        onKeyboardMoveEnd={onKeyboardMove}
         onFocusedInputLayoutChangedReanimated={inputLayoutHandler}
       >
         {children}
